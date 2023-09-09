@@ -43,7 +43,7 @@ export default () => {
 
 		fetch(
 			ExecutionEnvironment.Standalone === "standalone"
-				? ""
+				? "https://hashwordapp-production.up.railway.app"
 				: "http://192.168.1.16:8080",
 			{
 				method: "POST",
