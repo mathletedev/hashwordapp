@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "hashword",
+    "name": "Hashword",
     "slug": "hashword",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#1e1e2e"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -29,7 +29,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "79103f84-8cee-4922-9aa9-3db9ea068858"
+        "projectId": "e1732ef4-eba6-4e7e-b060-57e76f803ab3"
       }
     },
     "owner": "mathletedev"
