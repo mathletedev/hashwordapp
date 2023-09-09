@@ -1,10 +1,9 @@
-import { ExecutionEnvironment } from "expo-constants";
+import * as Clipboard from "expo-clipboard";
 import { useFonts } from "expo-font";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
 	Alert,
-	Clipboard,
 	StyleSheet,
 	Text,
 	TextInput,
@@ -41,22 +40,17 @@ export default () => {
 
 		setCalculating(true);
 
-		fetch(
-			ExecutionEnvironment.Standalone === "standalone"
-				? "https://hashwordapp-production.up.railway.app"
-				: "http://192.168.1.16:8080",
-			{
-				method: "POST",
-				headers: {
-					Accept: "application/json",
-					"Content-Type": "application/json"
-				},
-				body: JSON.stringify({ seed, key })
-			}
-		)
+		fetch("https://hashword.onrender.com", {
+			method: "POST",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({ seed, key })
+		})
 			.then(res => res.json())
-			.then((res: Response) => {
-				Clipboard.setString(res.res);
+			.then(async (res: Response) => {
+				await Clipboard.setStringAsync(res.res);
 
 				Alert.alert("success!", "password copied to clipboard");
 
